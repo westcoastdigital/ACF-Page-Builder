@@ -1,0 +1,133 @@
+  //** PIXTOREM **//
+  $gridUnit:16;
+  $fontSize:16;
+
+  @function pxToRem($pixels) {
+    @return #{$pixels / $fontSize}rem;
+  }
+
+  @function gridUnit($grids) {
+    @return pxToRem($grids * $gridUnit);
+  }
+
+  //*** TRANISTIONS ***//
+  @mixin transition( $speed: 0.3s ) {
+    transition: all $speed ease-in-out;
+  }
+
+  //** BREAKPOINTS **//
+  @mixin for-phone-portrait {
+    @media (max-width: 544px) { @content; }
+  }
+  
+  @mixin for-phone-landscape {
+    @media (min-width: 544px) and (max-width: 768px) { @content; }
+  }
+  
+  @mixin for-phone-landscape-down {
+    @media (max-width: 768px) { @content; }
+  }
+  
+  @mixin for-tablets-down {
+    @media (max-width: 992px) { @content; }
+  }
+  
+  @mixin for-tablets {
+    @media (min-width: 768px) and (max-width: 992px) { @content; }
+  }
+  
+  @mixin for-tablets-up {
+    @media (min-width: 768px) { @content; }
+  }
+  
+  @mixin for-desktop {
+    @media (min-width: 992px) and (max-width: 1200px) { @content; }
+  }
+  
+  @mixin for-desktop-up {
+    @media (min-width: 992px) { @content; }
+  }
+  
+  @mixin for-large-devices {
+    @media (min-width: 1200px) { @content; }
+  }
+
+  
+  //** FLEXBOX **//
+  @mixin flex_stretch {
+    display: flex;
+    align-items: stretch;
+  }
+  
+  @mixin flex_columns {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  @mixin flex_start_start {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  @mixin flex_start_end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  
+  @mixin flex_end_center {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  @mixin flex_start_center {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  @mixin flex_center_space_around() {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+  }
+  
+  @mixin flex_start_space_between() {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  
+  @mixin flex_center_space_between() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  
+  @mixin flex_center_center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  
+  @mixin flex_center_start(){
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  @mixin flex_center_end(){
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  @mixin flex_wrap(){
+    flex-wrap: wrap;
+  }

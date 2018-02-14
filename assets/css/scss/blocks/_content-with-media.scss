@@ -1,0 +1,24 @@
+.block-content_with_media {
+    .block-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        .block-the-content {
+            max-width: 50%;
+        }// block-the-content
+        .block-addon {
+            max-width: 50%;
+        }// block-addon
+        @include for-phone-landscape-down {
+            flex-direction: column-reverse;
+            .block-the-content {
+                max-width: 100%;
+            }// block-the-content
+            .block-addon {
+                max-width: 100%;
+            }// block-addon
+        }
+    }// block-inner
+}// block-content_with_media

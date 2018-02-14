@@ -1,0 +1,55 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+button, .button, .btn {
+    margin-bottom: 1rem;
+}
+.btn, .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+    display: inline-block;
+    height: pxToRem(38);
+    padding: 0 pxToRem(30);
+    color: #333;
+    text-align: center;
+    font-size: pxToRem(11);
+    font-weight: 600;
+    line-height: pxToRem(38);
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border-radius: pxToRem(4);
+    border: 1px solid #333;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.block-wrap {
+    .block-title {
+        h2 {
+            text-align: center;
+            margin-top: pxToRem(20);
+            margin-bottom: pxToRem(20);
+        }
+    }
+    .block-content {
+        padding: pxToRem(20);
+    }
+}
+.block-with-overlay {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    .block-content {
+        position: relative;
+        z-index: 20;
+    }
+}
+.block-with-parallax {
+    background-size: cover;
+    background-repeat: no-repeat;
+}// block-with-parallax

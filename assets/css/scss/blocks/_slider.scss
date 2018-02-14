@@ -1,0 +1,28 @@
+.block-slider {
+    .slick {
+        .item {
+            .slide-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .block-addon {
+                    flex: 1;
+                }
+                .content {
+                    margin: pxToRem(10);
+                    flex: 1;
+                }// content
+                @include for-phone-portrait {
+                    flex-direction: column;
+                    justify-content: center;
+                }
+            }// slide-container
+        }// item
+    }// slick
+    .slick-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: pxToRem(20);
+    }
+}// block-slider

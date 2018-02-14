@@ -1,0 +1,39 @@
+.block-collapsibles {
+    .accordion-link {
+        color: #333;
+        padding: 0 1.88rem;
+        font-size: 0.69rem;
+        font-weight: 600;
+        line-height: 2.38rem;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        white-space: nowrap;
+        background-color: #ccc;
+        cursor: pointer;
+        box-sizing: border-box;
+        display: block;
+        @include transition;
+        position: relative;
+        &:after {
+            content: '+';
+            right: 1.88rem;
+            position: absolute;
+            font-size: pxToRem(24);
+            font-weight: normal;
+        }
+        &.active {
+            color: #fff;
+            background-color: gray;
+            &:after {
+                content: '-';
+            }
+        }
+    }// accordion-link
+    .tab-content {
+        padding: 15px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        margin-top: pxToRem(20);
+        margin-bottom: pxToRem(20);
+    }// tab-content
+}// block-collapsibles

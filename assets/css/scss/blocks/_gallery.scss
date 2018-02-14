@@ -1,0 +1,57 @@
+.block {
+    @include for-phone-landscape-down {
+        .masonry[data-columns]::before {
+            content: '1 .column.size-1of1';
+        }
+    }
+    @include for-tablets {
+        .masonry[data-columns]::before {
+            content: '2 .column.size-1of2';
+        }
+    }
+    @include for-desktop-up {
+        .masonry[data-columns]::before {
+            content: '3 .column.size-1of3';
+        }
+    }
+    .masonry { 
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        &:hover {
+            .hover {
+                .image {
+                    opacity: 0.7;
+                }
+            }
+        }
+        .item {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            display: block;
+            .image {
+                display: block;
+                @include transition(0.8s);
+            }
+            &:hover {
+                .image {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    .size-1of1 { 
+        width: 100%;
+        overflow: hidden;
+    }
+    .size-1of2 { 
+        width: 50%;
+        overflow: hidden;
+    }
+    .size-1of3 { 
+        width: 33.333%;
+        overflow: hidden;
+    }
+}// block
